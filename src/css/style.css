@@ -1,0 +1,327 @@
+/* --- Configurações Globais e Paleta de Cores --- */
+:root {
+    --cor-azul-escuro: #0a192f; /* Azul escuro do logo */
+    --cor-azul-texto: #1e3a8a; /* Azul para textos importantes */
+    --cor-ciano-destaque: #4AD9D9; /* Ciano do logo para botões e links */
+    --cor-fundo-claro: #f8f9fa;
+    --cor-fundo-branco: #ffffff;
+    --cor-texto-claro: #e6f1ff;
+    --cor-texto-escuro: #343a40;
+    --sombra-card: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* --- Estilos de Base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--cor-texto-escuro);
+    background-color: var(--cor-fundo-claro);
+}
+
+/* --- Cabeçalho e Navegação --- */
+.header {
+    background-color: var(--cor-fundo-branco);
+    padding: 15px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.header .logo img {
+    max-height: 65px;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-menu a {
+    color: var(--cor-azul-escuro);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--cor-ciano-destaque);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+/* --- Seção Principal (Hero) --- */
+#hero {
+    background: linear-gradient(rgba(10, 25, 47, 0.75), rgba(10, 25, 47, 0.75)), url('/src/imagens/consultorio-1.jpg') no-repeat center center/cover;
+    color: var(--cor-texto-claro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 90vh;
+    padding: 0 20px;
+}
+
+.hero-content {
+     max-width: 800px;
+}
+
+#hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+#hero p {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.cta-button {
+    background-color: var(--cor-ciano-destaque);
+    color: var(--cor-azul-escuro);
+    padding: 18px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(74, 217, 217, 0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(74, 217, 217, 0.5);
+}
+
+/* --- Estilos de Seção Padrão --- */
+.section {
+    padding: 100px 8%;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    color: var(--cor-azul-escuro);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: #6c757d;
+    max-width: 700px;
+    margin: 0 auto 60px auto;
+    line-height: 1.7;
+    text-align: center;
+}
+
+/* --- Seção Sobre --- */
+#sobre {
+    background-color: var(--cor-fundo-branco);
+}
+
+.sobre-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.sobre-texto {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.sobre-texto .section-title,
+.sobre-texto .section-subtitle {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* --- Seção de Serviços --- */
+#servicos {
+    text-align: center;
+}
+
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.servico-card {
+    background-color: var(--cor-fundo-branco);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: var(--sombra-card);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid var(--cor-ciano-destaque);
+}
+
+.servico-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.servico-card .icon {
+    font-size: 3rem;
+    color: var(--cor-ciano-destaque);
+    margin-bottom: 20px;
+}
+
+.servico-card h3 {
+    color: var(--cor-azul-escuro);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.servico-card p {
+    line-height: 1.8;
+}
+
+/* --- Seção de Contato --- */
+#contato {
+    background-color: var(--cor-fundo-branco);
+    text-align: center;
+}
+
+.map-container {
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--sombra-card);
+    margin-top: 40px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 450px;
+    border: 0;
+}
+
+/* --- Rodapé --- */
+.footer {
+    background-color: var(--cor-azul-escuro);
+    color: var(--cor-texto-claro);
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.footer-logo img {
+    max-height: 80px;
+    margin-bottom: 25px;
+}
+
+.footer-info p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+.footer-info a {
+    color: var(--cor-ciano-destaque);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer-copyright {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #adb5bd;
+    border-top: 1px solid #343a40;
+    padding-top: 30px;
+}
+
+/* --- Estilos do Carrossel (Slider) --- */
+.slider-container {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    position: relative;
+    margin: auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--sombra-card);
+}
+
+.slide {
+    display: none;
+}
+
+.slide img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        padding: 15px;
+    }
+    .nav-menu {
+        width: 100%;
+        margin-top: 15px;
+    }
+    .nav-menu ul {
+        justify-content: space-around;
+        gap: 10px;
+    }
+    .section {
+        padding: 80px 5%;
+    }
+    .section-title {
+        font-size: 2.2rem;
+    }
+    .sobre-container {
+        flex-direction: column;
+    }
+    .sobre-texto {
+        text-align: center;
+    }
+    .sobre-texto .section-title,
+    .sobre-texto .section-subtitle {
+        text-align: center;
+    }
+}
