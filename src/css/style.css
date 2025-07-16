@@ -38,6 +38,7 @@ body {
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease-in-out; /* Adicionado para transição suave em mobile */
 }
 
 .header .logo img {
@@ -215,6 +216,12 @@ body {
     text-align: center;
 }
 
+/* NOVO ESTILO para o botão de WhatsApp */
+.whatsapp-button {
+    display: inline-block;
+    margin-bottom: 40px;
+}
+
 .map-container {
     width: 100%;
     border-radius: 15px;
@@ -300,6 +307,12 @@ body {
         flex-direction: column;
         padding: 15px;
     }
+    
+    /* NOVA CLASSE para esconder o header */
+    .header.header-hidden {
+        transform: translateY(-100%);
+    }
+
     .nav-menu {
         width: 100%;
         margin-top: 15px;
